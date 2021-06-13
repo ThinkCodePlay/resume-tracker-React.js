@@ -1,0 +1,12 @@
+.center {
+  display: flex;
+  height: 100%;
+  width:fit-content;
+  padding: 30px;
+}
+
+.table {
+  height: 300px;
+  width: 100%;
+  flex-grow: 1;
+}

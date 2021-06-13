@@ -1,0 +1,73 @@
+.header {
+  height: 30vh;
+  background-image: linear-gradient(to right bottom, #7ed56f9f, #28b4858e);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 20vh, 0 100%);
+  position: relative;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /* stopes shaking in animations */
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80%{
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80%{
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
