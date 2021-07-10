@@ -1,6 +1,6 @@
 {
-  "name": "resume-tracker",
-  "homepage": "https://thinkcodeplay.github.io/resume-tracker-React.js/",
+  "name": "To-Do-List",
+  "homepage": "https://thinkcodeplay.github.io/to-do-list/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

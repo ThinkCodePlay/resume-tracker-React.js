@@ -7,8 +7,8 @@ const Header = () => {
     <div className="header">
       <div className="text-box">
         <h1 className="heading-primary">
-          <span className="heading-primary-main">Resume Tracker</span>
-          <span className="heading-primary-sub">Track your application</span>
+          <span className="heading-primary-main">To Do List</span>
+          <span className="heading-primary-sub">Never Forget Again</span>
         </h1>
       </div>
     </div>

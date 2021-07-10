@@ -50,8 +50,8 @@ const List = () => {
       </div>
     );
   };
-  const companyEditor = (props) => {
-    return inputTextEditor(props, "company");
+  const taskEditor = (props) => {
+    return inputTextEditor(props, "task");
   };
   const dateEditor = (props) => {
     return inputTextEditor(props, "date");
@@ -59,11 +59,8 @@ const List = () => {
   const timeEditor = (props) => {
     return inputTextEditor(props, "time");
   };
-  const titleEditor = (props) => {
-    return inputTextEditor(props, "title");
-  };
-  const urlEditor = (props) => {
-    return inputTextEditor(props, "url");
+  const commentEditor = (props) => {
+    return inputTextEditor(props, "comment");
   };
   const statusEditor = (props) => {
     return inputTextEditor(props, "status");
@@ -86,27 +83,34 @@ const List = () => {
   const exportCSV = (selectionOnly) => {
     console.log(dt.current);
     dt.current.exportCSV({ selectionOnly });
-}
+  };
 
   const header = (
     <div className="p-d-flex p-ai-center export-buttons">
-        <Button type="button" icon="pi pi-file-o" onClick={() => exportCSV(false)} className="p-mr-2" data-pr-tooltip="CSV" />
-        {/* <Button type="button" icon="pi pi-file-excel" onClick={exportExcel} className="p-button-success p-mr-2" data-pr-tooltip="XLS" /> */}
-        {/* <Button type="button" icon="pi pi-file-pdf" onClick={exportPdf} className="p-button-warning p-mr-2" data-pr-tooltip="PDF" /> */}
+      <Button
+        type="button"
+        icon="pi pi-file-o"
+        onClick={() => exportCSV(false)}
+        className="p-mr-2"
+        data-pr-tooltip="CSV"
+      />
     </div>
-);
- 
+  );
 
   return (
     <div className="center">
       <div className="table">
-        <DataTable value={rows} className="p-datatable-gridlines" header={header} ref={dt}>
-          <Column field="company" header="Company" editor={companyEditor}></Column>
+        <DataTable
+          value={rows}
+          className="p-datatable-gridlines"
+          header={header}
+          ref={dt}
+        >
+          <Column field="task" header="Task" editor={taskEditor}></Column>
           <Column field="date" header="Date" editor={dateEditor}></Column>
           <Column field="time" header="Time" editor={timeEditor}></Column>
-          <Column field="title" header="Title" editor={titleEditor}></Column>
-          <Column field="url" header="Url" editor={urlEditor}></Column>
           <Column field="status" header="Status" editor={statusEditor}></Column>
+          <Column field="comment" header="Comment" editor={commentEditor}></Column>
           <Column field="delete" header="" body={deleteTemplate}></Column>
         </DataTable>
         <Button
